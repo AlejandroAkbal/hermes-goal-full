@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Hermes Agent documentation
+    url: https://hermes-agent.nousresearch.com/docs/user-guide/features/goals
+    about: How /goal, /subgoal, and quality gates work in Hermes itself.
+  - name: Security report
+    url: https://github.com/AlejandroAkbal/hermes-goal-full/security/advisories/new
+    about: Report a vulnerability privately. Do not open a public issue.

@@ -1,0 +1,17 @@
+name: goal-full
+version: 0.4.0
+description: "Sets a Hermes goal completely: contract, subgoals, and gates from one sentence, plus agent-started goals, judged removals, and a finish line carried into delegated subagents."
+author: Alejandro Akbal
+license: MIT
+homepage: https://github.com/AlejandroAkbal/hermes-goal-full
+requires_hermes: ">=0.23"
+tags:
+  - goals
+  - autonomous-agents
+  - delegation
+  - judge
+provides_tools:
+  - goal_update
+provides_hooks:
+  - pre_tool_call
+  - transform_tool_result

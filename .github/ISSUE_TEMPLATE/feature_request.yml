@@ -1,0 +1,51 @@
+name: Feature request
+description: Propose a change to goal-full.
+title: "[Feature]: "
+labels: ["enhancement"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Before opening this, check the Roadmap and Limitations sections of the README. Changes that
+        fork Hermes' goal engine are unlikely to be merged; this plugin writes through it on purpose.
+  - type: textarea
+    id: problem
+    attributes:
+      label: The problem
+      description: What can you not do today, or what goes wrong?
+      placeholder: When the agent ..., it cannot ..., so ...
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed change
+      description: What should happen instead? Keep it concrete.
+    validations:
+      required: true
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives considered
+      description: Existing commands, a different design, or doing nothing.
+    validations:
+      required: false
+  - type: dropdown
+    id: scope
+    attributes:
+      label: Scope
+      options:
+        - Plugin behaviour
+        - Documentation
+        - Tests or CI
+        - Compatibility with a newer Hermes
+        - Other
+    validations:
+      required: true
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Checks
+      options:
+        - label: I searched existing issues and the README before opening this one.
+          required: true

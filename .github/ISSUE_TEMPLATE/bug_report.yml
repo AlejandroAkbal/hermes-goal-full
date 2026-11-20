@@ -1,0 +1,67 @@
+name: Bug report
+description: Something in goal-full does not behave as documented.
+title: "[Bug]: "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for the report. Please do not include secrets, API keys, or private session content.
+        For a security issue, use the private reporting link in SECURITY.md instead.
+  - type: textarea
+    id: what-happened
+    attributes:
+      label: What happened
+      description: What did you expect, and what did you get instead?
+      placeholder: I ran /goalfull ... and expected ..., but ...
+    validations:
+      required: true
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: Steps to reproduce
+      description: The smallest sequence that shows the problem.
+      placeholder: |
+        1. Run `hermes --version`
+        2. Run `/goalfull ...`
+        3. Approve the plan
+        4. See ...
+    validations:
+      required: true
+  - type: input
+    id: hermes-version
+    attributes:
+      label: Hermes version
+      description: Output of `hermes --version`.
+      placeholder: Hermes Agent v0.23.3
+    validations:
+      required: true
+  - type: dropdown
+    id: surface
+    attributes:
+      label: Surface
+      options:
+        - Desktop
+        - TUI
+        - Classic CLI
+        - Gateway (messaging)
+        - Other
+    validations:
+      required: true
+  - type: textarea
+    id: logs
+    attributes:
+      label: Relevant output
+      description: Tool output, judge reason, or audit line. Remove anything private.
+      render: text
+    validations:
+      required: false
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Checks
+      options:
+        - label: I searched existing issues before opening this one.
+          required: true
+        - label: I removed secrets and private data from this report.
+          required: true
