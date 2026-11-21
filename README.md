@@ -14,7 +14,6 @@
   <a href="LICENSE"><img alt="License: MIT" src="https://img.shields.io/badge/license-MIT-2ea44f"></a>
   <img alt="Hermes 0.23 or newer" src="https://img.shields.io/badge/Hermes-%3E%3D0.23-6f42c1">
   <img alt="Python 3.11 or newer" src="https://img.shields.io/badge/python-3.11%2B-3776ab">
-  <img alt="55 tests passing" src="https://img.shields.io/badge/tests-55%20passing-brightgreen">
 </p>
 
 ---
