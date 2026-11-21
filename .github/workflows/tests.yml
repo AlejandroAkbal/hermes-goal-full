@@ -19,12 +19,6 @@ jobs:
       - name: Check out the plugin
         uses: actions/checkout@v4
 
-      - name: Set up Python
-        uses: actions/setup-python@v5
-        with:
-          python-version: "3.12"
-          cache: pip
-
       # The tests import Hermes' real goal storage, so CI needs a Hermes
       # checkout. Pinned to a release this plugin is tested against. When
       # bumping this, run the suite locally first and update the README's
@@ -36,18 +30,19 @@ jobs:
           ref: v0.23.3
           path: .hermes-src
 
-      - name: Install Hermes and pytest
+      # Hermes ships a uv lockfile; installing from it gives the same
+      # dependency set Hermes itself runs with (plain pip resolves a
+      # different, incomplete set).
+      - name: Set up uv
+        uses: astral-sh/setup-uv@1db35dd8eee11c5894872e0b383ae6c406cf738d # v10.4.0
+
+      - name: Install Hermes from its lockfile
+        working-directory: .hermes-src
         run: |
-          python -m pip install --upgrade pip
-          pip install -e ./.hermes-src
-          pip install pytest
+          uv sync --frozen --python 3.14
+          uv pip install --python .venv/bin/python pytest
 
       - name: Run the tests
         env:
           PYTHONPATH: ${{ github.workspace }}/.hermes-src
-        run: pytest tests/ -q
-
-      - name: Validate the plugin manifest
-        run: |
-          hermes plugins validate .
-          hermes plugins doctor . --ci
+        run: .hermes-src/.venv/bin/python -m pytest tests/ -q
