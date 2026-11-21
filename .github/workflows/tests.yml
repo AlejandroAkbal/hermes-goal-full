@@ -17,7 +17,7 @@ jobs:
 
     steps:
       - name: Check out the plugin
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
 
       - name: Set up Python
         uses: actions/setup-python@v5
@@ -30,7 +30,7 @@ jobs:
       # bumping this, run the suite locally first and update the README's
       # compatibility section if the private imports moved.
       - name: Check out Hermes
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
         with:
           repository: NousResearch/hermes-agent
           ref: v0.23.3
