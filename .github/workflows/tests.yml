@@ -39,7 +39,7 @@ jobs:
         run: |
           python -m pip install --upgrade pip
           pip install -e ./.hermes-src
-          pip install pytest ruamel.yaml
+          pip install pytest ruamel.yaml python-dotenv
 
       - name: Run the tests
         env:
