@@ -34,7 +34,7 @@ jobs:
       # dependency set Hermes itself runs with (plain pip resolves a
       # different, incomplete set).
       - name: Set up uv
-        uses: astral-sh/setup-uv@v10
+        uses: astral-sh/setup-uv@1db35dd8eee11c5894872e0b383ae6c406cf738d # v10.4.0
 
       - name: Install Hermes from its lockfile
         working-directory: .hermes-src
