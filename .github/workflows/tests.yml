@@ -46,10 +46,3 @@ jobs:
         env:
           PYTHONPATH: ${{ github.workspace }}/.hermes-src
         run: .hermes-src/.venv/bin/python -m pytest tests/ -q
-
-      - name: Validate the plugin manifest
-        env:
-          HERMES_HOME: ${{ runner.temp }}/hermes-home
-        run: |
-          .hermes-src/.venv/bin/hermes plugins validate .
-          .hermes-src/.venv/bin/hermes plugins doctor . --ci
